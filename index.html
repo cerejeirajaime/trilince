@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trilince | Dynamics 365 CE Implementations</title>
-    <meta name="description" content="Trilince is a small company focused on Dynamics 365 CE implementations with global experience.">
+    <title>Trilince</title>
+    <meta name="description" content="Trilince is a company focused on Dynamics 365 CE implementations">
     <style>
         /* --- Reset & Core Variables --- */
         :root {
-            --brand-color: #8C746A; /* Muted Taupe/Brown from image */
-            --text-dark: #333333;
-            --text-light: #666666;
-            --bg-color: #F8F9FA; /* Off-white for softness */
+            --brand-color: #8C746A; 
+            --text-dark: #1F1F1F; /* Richer, darker black for headlines */
+            --text-body: #4F4F4F; /* Softer dark gray for reading text */
+            --bg-color: #FCFCFC; /* Very slight off-white for premium feel */
             --white: #ffffff;
         }
 
@@ -22,64 +22,51 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            /* "Segoe UI" is the standard for Microsoft-aligned designs */
+            font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-dark);
             line-height: 1.6;
             text-align: center;
             padding: 20px;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* --- Container --- */
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
-        /* --- Header & CSS Logo --- */
+        /* --- Header & SVG Logo --- */
         header {
-            margin-bottom: 80px;
-            padding-top: 40px;
+            margin-bottom: 70px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* Creating a clean triangle using only CSS borders to keep file size small and clean */
-        .logo-icon {
-            width: 0;
-            height: 0;
-            border-left: 15px solid transparent;
-            border-right: 15px solid transparent;
-            border-bottom: 25px solid var(--brand-color);
-            margin-bottom: 15px;
-            opacity: 0.9;
-        }
-
-        .logo-text {
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--brand-color);
-        }
-
-        /* --- Hero Section --- */
+        /* --- Typography Updates --- */
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 700;
-            margin-bottom: 24px;
             color: var(--text-dark);
-            line-height: 1.2;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+            margin-bottom: 30px;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero p {
-            font-size: 1.25rem;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto 60px auto;
+            font-size: 1.35rem; /* Professional standard size for leads */
             font-weight: 400;
+            color: var(--text-body);
+            line-height: 1.6;
+            max-width: 750px;
+            margin: 0 auto 50px auto;
         }
 
         /* --- Action Links/Buttons --- */
@@ -93,12 +80,12 @@
         .btn {
             display: inline-flex;
             align-items: center;
-            padding: 16px 32px;
-            font-size: 1rem;
+            padding: 14px 28px;
+            font-size: 1.05rem;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 4px;
-            transition: all 0.3s ease;
+            border-radius: 6px;
+            transition: all 0.2s ease;
             border: 2px solid var(--brand-color);
         }
 
@@ -109,45 +96,46 @@
         }
 
         .btn-primary:hover {
-            background-color: #7a655c;
-            border-color: #7a655c;
+            background-color: #756158;
+            border-color: #756158;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(140, 116, 106, 0.2);
+            box-shadow: 0 4px 15px rgba(140, 116, 106, 0.25);
         }
 
         /* Secondary Button Style (Outline) */
         .btn-secondary {
             background-color: transparent;
-            color: var(--brand-color);
+            color: var(--text-body);
+            border-color: #d1d1d1;
         }
 
         .btn-secondary:hover {
-            background-color: var(--brand-color);
-            color: var(--white);
+            border-color: var(--brand-color);
+            color: var(--brand-color);
             transform: translateY(-2px);
         }
 
-        /* Simple Icon helpers for buttons */
+        /* Icon styling */
         .btn svg {
-            margin-right: 10px;
-            height: 20px;
-            width: 20px;
+            margin-right: 12px;
+            height: 22px;
+            width: 22px;
             fill: currentColor;
         }
 
         /* --- Footer --- */
         footer {
-            margin-top: 120px;
+            margin-top: 100px;
             font-size: 0.9rem;
-            color: var(--text-light);
+            color: #888;
             border-top: 1px solid #eaeaea;
-            padding-top: 30px;
+            padding-top: 40px;
         }
 
         /* --- Responsive tweaks --- */
         @media (max-width: 600px) {
-            .hero h1 { font-size: 2.2rem; }
-            .hero p { font-size: 1.1rem; }
+            .hero h1 { font-size: 2.4rem; }
+            .hero p { font-size: 1.15rem; }
             .cta-container { flex-direction: column; }
             .btn { width: 100%; justify-content: center; }
         }
@@ -157,13 +145,27 @@
 
     <div class="container">
         <header>
-            <div class="logo-icon"></div>
-            <div class="logo-text">Trilince</div>
+            <svg width="250" height="120" viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" aria-label="Trilince Logo">
+              <g fill="none" stroke="#8C746A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M190 25 L130 60 L190 95 L190 25 Z" />
+                <path d="M182 36 L140 60 L182 84 L182 36 Z" />
+              </g>
+              <text x="160" y="145" 
+                    font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Roboto, sans-serif" 
+                    font-size="30" 
+                    font-weight="bold" 
+                    letter-spacing="9" 
+                    fill="#8C746A"
+                    text-anchor="middle">
+                    TRILINCE
+              </text>
+            </svg>
         </header>
 
         <main class="hero">
-            <h1>Simplifying Digital Journeys.</h1>
-            <p>We are a small company focused on Dynamics 365 CE implementations that has experience working with multinational companies across the globe for large implementations.</p>
+            <h1>Who said global implementations have to be boring or stressful?</h1>
+            
+            <p>We bring the expertise of having been the end customer, to make the daily work enjoyable, collaborative, and effective. Let's prove that a relaxed, positive team dynamic produces the best outcomes.</p>
 
             <div class="cta-container">
                 <a href="https://marketplace.microsoft.com/en-us/marketplace/partner-dir/edcfce90-562f-494f-a010-e17aa7c85470/overview" target="_blank" rel="noopener" class="btn btn-primary">
