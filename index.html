@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trilince | Dynamics 365 CE Implementations</title>
+    <meta name="description" content="Trilince is a small company focused on Dynamics 365 CE implementations with global experience.">
+    <style>
+        /* --- Reset & Core Variables --- */
+        :root {
+            --brand-color: #8C746A; /* Muted Taupe/Brown from image */
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-color: #F8F9FA; /* Off-white for softness */
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* --- Container --- */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* --- Header & CSS Logo --- */
+        header {
+            margin-bottom: 80px;
+            padding-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Creating a clean triangle using only CSS borders to keep file size small and clean */
+        .logo-icon {
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 25px solid var(--brand-color);
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--brand-color);
+        }
+
+        /* --- Hero Section --- */
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 60px auto;
+            font-weight: 400;
+        }
+
+        /* --- Action Links/Buttons --- */
+        .cta-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 32px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--brand-color);
+        }
+
+        /* Primary Button Style */
+        .btn-primary {
+            background-color: var(--brand-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #7a655c;
+            border-color: #7a655c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(140, 116, 106, 0.2);
+        }
+
+        /* Secondary Button Style (Outline) */
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--brand-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--brand-color);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Simple Icon helpers for buttons */
+        .btn svg {
+            margin-right: 10px;
+            height: 20px;
+            width: 20px;
+            fill: currentColor;
+        }
+
+        /* --- Footer --- */
+        footer {
+            margin-top: 120px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            border-top: 1px solid #eaeaea;
+            padding-top: 30px;
+        }
+
+        /* --- Responsive tweaks --- */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.1rem; }
+            .cta-container { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo-icon"></div>
+            <div class="logo-text">Trilince</div>
+        </header>
+
+        <main class="hero">
+            <h1>Simplifying Digital Journeys.</h1>
+            <p>We are a small company focused on Dynamics 365 CE implementations that has experience working with multinational companies across the globe for large implementations.</p>
+
+            <div class="cta-container">
+                <a href="https://marketplace.microsoft.com/en-us/marketplace/partner-dir/edcfce90-562f-494f-a010-e17aa7c85470/overview" target="_blank" rel="noopener" class="btn btn-primary">
+                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.3 87.6"><path d="M0 0h41.5v41.5H0V0zm45.8 0h41.5v41.5H45.8V0zM0 46h41.5v41.6H0V46zm45.8 0h41.5v41.6H45.8V46z"/></svg>
+                   Microsoft Partner Profile
+                </a>
+                
+                <a href="https://www.linkedin.com/company/trilince/" target="_blank" rel="noopener" class="btn btn-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h5v-8.306c0-4.613 6.111-4.956 6.111 0v8.306h5v-10.357c0-6.142-7.035-5.958-9.176-2.91l-1.003-1.749h-1.143v1.016z"/></svg>
+                    Connect on LinkedIn
+                </a>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Trilince. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
