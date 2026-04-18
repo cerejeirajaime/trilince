@@ -12,6 +12,57 @@
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "wdr7llv55b");
     </script>
+    <script>
+        const clarityConsentKey = 'trilince_cookie_consent';
+        const sendClarityConsent = (adStorage, analyticsStorage) => {
+            window.clarity('consentv2', {
+                ad_Storage: adStorage,
+                analytics_Storage: analyticsStorage
+            });
+        };
+
+        const setConsent = (value) => {
+            localStorage.setItem(clarityConsentKey, value);
+            if (value === 'granted') {
+                sendClarityConsent('granted', 'granted');
+            } else {
+                sendClarityConsent('denied', 'denied');
+            }
+        };
+
+        const loadStoredConsent = () => {
+            const existing = localStorage.getItem(clarityConsentKey);
+            if (existing === 'granted') {
+                sendClarityConsent('granted', 'granted');
+            } else if (existing === 'denied') {
+                sendClarityConsent('denied', 'denied');
+            } else {
+                // Default to privacy-preserving no-consent mode until the user chooses.
+                sendClarityConsent('denied', 'denied');
+            }
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadStoredConsent();
+            const banner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const rejectBtn = document.getElementById('cookie-reject');
+
+            if (!localStorage.getItem(clarityConsentKey) && banner) {
+                banner.classList.add('visible');
+            }
+
+            acceptBtn?.addEventListener('click', () => {
+                setConsent('granted');
+                banner?.classList.remove('visible');
+            });
+
+            rejectBtn?.addEventListener('click', () => {
+                setConsent('denied');
+                banner?.classList.remove('visible');
+            });
+        });
+    </script>
     <style>
         /* --- Reset & Core Variables --- */
         :root {
@@ -146,6 +197,81 @@
             .cta-container { flex-direction: column; }
             .btn { width: 100%; justify-content: center; }
         }
+
+        .cookie-banner {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9999;
+            transform: translateY(120%);
+            transition: transform 0.3s ease;
+            background: rgba(255, 255, 255, 0.98);
+            border-top: 1px solid #e2dfda;
+            box-shadow: 0 -12px 40px rgba(31, 31, 31, 0.12);
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+
+        .cookie-banner.visible {
+            transform: translateY(0);
+        }
+
+        .cookie-banner p {
+            margin: 0;
+            color: #333;
+            max-width: 680px;
+            text-align: left;
+        }
+
+        .cookie-banner-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .cookie-banner button {
+            cursor: pointer;
+            border: 1px solid #8c746a;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            padding: 12px 18px;
+            transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+        }
+
+        .cookie-banner button:hover {
+            transform: translateY(-1px);
+        }
+
+        .cookie-banner button.accept {
+            background-color: #8c746a;
+            color: #fff;
+            border-color: #8c746a;
+        }
+
+        .cookie-banner button.reject {
+            background-color: transparent;
+            color: #4f4f4f;
+        }
+
+        @media (max-width: 500px) {
+            .cookie-banner {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .cookie-banner-actions {
+                justify-content: stretch;
+            }
+            .cookie-banner button {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -190,6 +316,14 @@
         <footer>
             <p>&copy; <script>document.write(new Date().getFullYear())</script> Trilince. All rights reserved.</p>
         </footer>
+    </div>
+
+    <div id="cookie-banner" class="cookie-banner" aria-live="polite" role="dialog" aria-label="Cookie consent banner">
+        <p>We use Microsoft Clarity to understand how people interact with this site. Accept cookies to enable analytics and session tracking, or reject to keep tracking in no-consent mode.</p>
+        <div class="cookie-banner-actions">
+            <button id="cookie-reject" class="reject" type="button">Reject</button>
+            <button id="cookie-accept" class="accept" type="button">Accept</button>
+        </div>
     </div>
 
 </body>
