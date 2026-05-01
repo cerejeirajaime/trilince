@@ -64,266 +64,81 @@
         });
     </script>
     <style>
-        /* --- Reset & Core Variables --- */
-        :root {
-            --brand-color: #8C746A; 
-            --text-dark: #1F1F1F; /* Richer, darker black for headlines */
-            --text-body: #4F4F4F; /* Softer dark gray for reading text */
-            --bg-color: #FCFCFC; /* Very slight off-white for premium feel */
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            /* "Segoe UI" is the standard for Microsoft-aligned designs */
-            font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-dark);
-            line-height: 1.6;
-            text-align: center;
-            padding: 20px;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* --- Container --- */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        /* --- Header & SVG Logo --- */
-        header {
-            margin-bottom: 70px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* --- Typography Updates --- */
-        .hero h1 {
-            font-size: 3.2rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            line-height: 1.15;
-            letter-spacing: -0.5px;
-            margin-bottom: 30px;
-            max-width: 850px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero p {
-            font-size: 1.35rem; /* Professional standard size for leads */
-            font-weight: 400;
-            color: var(--text-body);
-            line-height: 1.6;
-            max-width: 750px;
-            margin: 0 auto 50px auto;
-        }
-
-        /* --- Action Links/Buttons --- */
-        .cta-container {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 14px 28px;
-            font-size: 1.05rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-            border: 2px solid var(--brand-color);
-        }
-
-        /* Primary Button Style */
-        .btn-primary {
-            background-color: var(--brand-color);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background-color: #756158;
-            border-color: #756158;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(140, 116, 106, 0.25);
-        }
-
-        /* Secondary Button Style (Outline) */
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--text-body);
-            border-color: #d1d1d1;
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--brand-color);
-            color: var(--brand-color);
-            transform: translateY(-2px);
-        }
-
-        /* Icon styling */
-        .btn svg {
-            margin-right: 12px;
-            height: 22px;
-            width: 22px;
-            fill: currentColor;
-        }
-
-        /* --- Footer --- */
-        footer {
-            margin-top: 100px;
-            font-size: 0.9rem;
-            color: #888;
-            border-top: 1px solid #eaeaea;
-            padding-top: 40px;
-        }
-
-        /* --- Responsive tweaks --- */
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 2.4rem; }
-            .hero p { font-size: 1.15rem; }
-            .cta-container { flex-direction: column; }
-            .btn { width: 100%; justify-content: center; }
-        }
-
-        .cookie-banner {
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 9999;
-            transform: translateY(120%);
-            transition: transform 0.3s ease;
-            background: rgba(255, 255, 255, 0.98);
-            border-top: 1px solid #e2dfda;
-            box-shadow: 0 -12px 40px rgba(31, 31, 31, 0.12);
-            padding: 20px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            flex-wrap: wrap;
-            font-size: 0.95rem;
-        }
-
-        .cookie-banner.visible {
-            transform: translateY(0);
-        }
-
-        .cookie-banner p {
-            margin: 0;
-            color: #333;
-            max-width: 680px;
-            text-align: left;
-        }
-
-        .cookie-banner-actions {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-        }
-
-        .cookie-banner button {
-            cursor: pointer;
-            border: 1px solid #8c746a;
-            border-radius: 6px;
-            font-size: 0.95rem;
-            padding: 12px 18px;
-            transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-        }
-
-        .cookie-banner button:hover {
-            transform: translateY(-1px);
-        }
-
-        .cookie-banner button.accept {
-            background-color: #8c746a;
-            color: #fff;
-            border-color: #8c746a;
-        }
-
-        .cookie-banner button.reject {
-            background-color: transparent;
-            color: #4f4f4f;
-        }
-
-        @media (max-width: 500px) {
-            .cookie-banner {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .cookie-banner-actions {
-                justify-content: stretch;
-            }
-            .cookie-banner button {
-                width: 100%;
-            }
-        }
-    </style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+  body {
+    background: #10353C;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+ 
+  .symbol-wrap {
+    width: min(260px, 60vw);
+  }
+ 
+  .symbol-wrap svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+ 
+  /* Base state: all stones are Clear (#EDEBE3) */
+  .stone {
+    fill: #EDEBE3;
+    transition: fill 0.6s ease;
+  }
+ 
+  /* Signal red */
+  .stone.active {
+    fill: #EC3A27;
+  }
+ 
+  /*
+    Three stones, staggered animation.
+    Each stone cycles through: active (red) → rest (cream) → rest (cream) → repeat
+    Phase offsets ensure only one is red at a time, with a smooth handoff.
+ 
+    Duration per full cycle: 3s
+    Each stone is red for 1s, cream for 2s
+    Offsets: stone1=0s, stone2=1s, stone3=2s
+  */
+ 
+  .stone-1 {
+    animation: pulse 3s ease-in-out 0s infinite;
+  }
+  .stone-2 {
+    animation: pulse 3s ease-in-out 1s infinite;
+  }
+  .stone-3 {
+    animation: pulse 3s ease-in-out 2s infinite;
+  }
+ 
+  @keyframes pulse {
+    0%   { fill: #EC3A27; }
+    28%  { fill: #EC3A27; }
+    48%  { fill: #EDEBE3; }
+    100% { fill: #EDEBE3; }
+  }
+ 
+</style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <svg width="250" height="120" viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" aria-label="Trilince Logo">
-              <g fill="none" stroke="#8C746A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M190 25 L130 60 L190 95 L190 25 Z" />
-                <path d="M182 36 L140 60 L182 84 L182 36 Z" />
-              </g>
-              <text x="160" y="145" 
-                    font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Roboto, sans-serif" 
-                    font-size="30" 
-                    font-weight="bold" 
-                    letter-spacing="9" 
-                    fill="#8C746A"
-                    text-anchor="middle">
-                    TRILINCE
-              </text>
-            </svg>
-        </header>
-
-        <main class="hero">
-            <h1>Who said global implementations have to be boring or stressful?</h1>
-            
-            <p>We bring the expertise of having been Dynamics 365 CE end customer, to make the daily work enjoyable, collaborative, and effective. Let's prove that a relaxed, positive team produces the best outcomes.</p>
-
-            <div class="cta-container">
-                <a href="https://marketplace.microsoft.com/en-us/marketplace/partner-dir/edcfce90-562f-494f-a010-e17aa7c85470/overview" target="_blank" rel="noopener" class="btn btn-primary">
-                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.3 87.6"><path d="M0 0h41.5v41.5H0V0zm45.8 0h41.5v41.5H45.8V0zM0 46h41.5v41.6H0V46zm45.8 0h41.5v41.6H45.8V46z"/></svg>
-                   Microsoft Partner Profile
-                </a>
-                
-                <a href="https://www.linkedin.com/company/trilince/" target="_blank" rel="noopener" class="btn btn-secondary">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h5v-8.306c0-4.613 6.111-4.956 6.111 0v8.306h5v-10.357c0-6.142-7.035-5.958-9.176-2.91l-1.003-1.749h-1.143v1.016z"/></svg>
-                    Connect on LinkedIn
-                </a>
-            </div>
-        </main>
-
-        <footer>
-            <p>&copy; <script>document.write(new Date().getFullYear())</script> Trilince. All rights reserved.</p>
-        </footer>
-    </div>
-
-    <div id="cookie-banner" class="cookie-banner" aria-live="polite" role="dialog" aria-label="Cookie consent banner">
-        <p>We use Microsoft Clarity to understand how people interact with this site. Accept cookies to enable analytics and session tracking, or reject to keep tracking in no-consent mode.</p>
-        <div class="cookie-banner-actions">
-            <button id="cookie-reject" class="reject" type="button">Reject</button>
-            <button id="cookie-accept" class="accept" type="button">Accept</button>
-        </div>
+    <div class="symbol-wrap">
+        <svg viewBox="0 0 583.67 715.03" xmlns="http://www.w3.org/2000/svg">
+        
+            <!-- Stone 1 — large (top/center) -->
+            <path class="stone stone-1" d="M296.94,338.71c38.39-2.79,97.22-54.21,112.16-88.85,16.1-37.34,16.38-116.68-5.78-151.51-10.88-17.09-27.72-21.88-40.37-33.5-2.88-2.65-2.84-6.68-5.1-8.64C326,28.58,258.76-3.87,216.31.38c-3.46.35-6.22,3.3-10.42,3.47-4.98.2-9.36-2.59-15.3-1.79-32.09,4.35-91.97,46.83-113.37,70.54-18.29,20.26-35.6,56.61-45.99,82.86-9.67,24.42-8.36,59.8-8.27,86.22.12,32.42,7.89,48.08,31.8,69.52,3.49,3.13,10.59,5.81,12.99,9.43,1.35,2.04,2.74,13.25,4.12,16.42,5.54,12.64,36.7,20.31,48.48,27.95,52.4,33.95,114.31-21.75,176.58-26.27Z"/>
+        
+            <!-- Stone 2 — small (bottom left) -->
+            <path class="stone stone-2" d="M124.65,560.98c17.46,1.27,44.22,24.66,51.01,40.41,7.32,16.98,7.45,53.07-2.63,68.9-4.95,7.77-12.61,9.95-18.36,15.24-1.31,1.2-1.29,3.04-2.32,3.93-14.48,12.57-45.06,27.33-64.37,25.4-1.57-.16-2.83-1.5-4.74-1.58-2.27-.09-4.26,1.18-6.96.81-14.6-1.98-41.83-21.3-51.56-32.08-8.32-9.22-16.19-25.75-20.92-37.68C-.59,633.22,0,617.13.05,605.11c.05-14.75,3.59-21.86,14.46-31.62,1.59-1.42,4.82-2.64,5.91-4.29.61-.93,1.24-6.03,1.88-7.47,2.52-5.75,16.69-9.24,22.05-12.71,12.18-7.89,29.17-5.88,43-1.46,13.82,4.42,22.84,12.36,37.31,13.41Z"/>
+        
+            <!-- Stone 3 — medium (bottom right) -->
+            <path class="stone stone-3" d="M459.02,697.73c-17.46-1.27-44.22-24.66-51.01-40.41-7.32-16.98-7.45-53.07,2.63-68.9,4.95-7.77,12.61-9.95,18.36-15.24,1.31-1.2,1.29-3.04,2.32-3.93,14.48-12.57,45.06-27.33,64.37-25.4,1.57.16,2.83,1.5,4.74,1.58,2.27.09,4.26-1.18,6.96-.81,14.6,1.98,41.83,21.3,51.56,32.08,8.32,9.22,16.19,25.75,20.92,37.68,4.4,11.11,3.8,27.2,3.76,39.21-.05,14.75-3.59,21.86-14.46,31.62-1.59,1.42-4.82,2.64-5.91,4.29-.61.93-1.24,6.03-1.88,7.47-2.52,5.75-16.69,9.24-22.05,12.71-12.18,7.89-29.17,5.88-43,1.46-13.82-4.42-22.84-12.36-37.31-13.41Z"/>
+        
+        </svg>
     </div>
 
 </body>
