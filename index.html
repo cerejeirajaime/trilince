@@ -408,6 +408,11 @@
   .contact h2 { font-size: clamp(44px, 7.6vw, 120px); max-width: 12ch; }
   .contact .lines { margin-top: 48px; display: flex; flex-wrap: wrap; gap: 14px; }
   .contact .lines .btn { font-size: 17px; }
+  .contact .lines { gap: 14px 28px; }
+  .contact .pair { display: flex; gap: 8px; max-width: 100%; }
+  .btn.icon { padding: 0; justify-content: center; flex: none; width: 53px; height: 53px; align-self: center; }
+  .btn.icon svg { width: 18px; height: 18px; transition: transform .4s var(--ease); }
+  .btn.icon:hover svg { transform: scale(1.1); }
 
   footer { background: var(--sky-deep); padding: 48px var(--gutter) calc(36px + env(safe-area-inset-bottom, 0px)); }
   footer .row { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; max-width: 1440px; margin: 0 auto; }
@@ -650,35 +655,6 @@
     </div>
   </section>
 
-  <!-- Who we help -->
-  <section class="audience pad" id="who">
-    <div class="wrap">
-      <span class="eyebrow reveal">who we walk with</span>
-      <h2 class="reveal d1">Expected to lead with confidence. Held back by systems<span class="dot">.</span></h2>
-      <p class="insight reveal d2">Leaders are asked to deliver results while working through scattered data, manual processes and constant uncertainty. Too often, the organisation becomes a barrier to its own growth.</p>
-
-      <div class="people">
-        <div class="person reveal">
-          <div class="role">Head of Sales</div>
-          <div class="tension">Needs predictability and control, but operates in chaos.</div>
-          <ul><li>Full visibility over the pipeline</li><li>Leads that are properly tracked</li><li>A CRM the team actually adopts</li></ul>
-        </div>
-        <div class="person reveal d1">
-          <div class="role">Head of Marketing</div>
-          <div class="tension">Drives growth, but lacks visibility and attribution.</div>
-          <ul><li>Marketing and sales data connected</li><li>Qualified leads at scale</li><li>Proven ROI for every campaign</li></ul>
-        </div>
-        <div class="person reveal d2">
-          <div class="role">Head of Customer Success</div>
-          <div class="tension">Owns the relationship, but lacks the full picture.</div>
-          <ul><li>A single view of every customer</li><li>Proactive, not reactive, service</li><li>Faster resolution, lower churn</li></ul>
-        </div>
-      </div>
-
-      <p class="benefit reveal">We remove the chaos so you can lead with clarity and confidence<span class="dot">.</span></p>
-    </div>
-  </section>
-
   <!-- Pillars -->
   <section class="pillars pad" id="pillars">
     <div class="wrap layout">
@@ -736,7 +712,7 @@
         <p class="reveal d2">We embed ourselves into your team. Aligning to your goals, adapting, and staying involved all the way.</p>
       </div>
       <div class="guides">
-        <a class="guide-card reveal" href="jaimecerejeira.html">
+        <a class="guide-card reveal" href="mailto:jaime.cerejeira@trilince.com">
           <div class="photo"><img src="assets/jaime-cerejeira.jpg" alt="Jaime Cerejeira" loading="lazy" width="700" height="1478"></div>
           <h3>Jaime Cerejeira</h3>
           <span class="mail">jaime.cerejeira@trilince.com</span>
@@ -756,8 +732,18 @@
       <span class="eyebrow reveal">let's meet and greet</span>
       <h2 class="reveal d1">Let's focus on what's next<span class="dot">.</span></h2>
       <div class="lines reveal d2">
-        <a class="btn solid" href="mailto:jaime.cerejeira@trilince.com">jaime.cerejeira@trilince.com <span class="arrow">→</span></a>
-        <a class="btn" href="mailto:madalena.albuquerque@trilince.com">madalena.albuquerque@trilince.com <span class="arrow">→</span></a>
+        <div class="pair">
+          <a class="btn solid" href="mailto:jaime.cerejeira@trilince.com">jaime.cerejeira@trilince.com <span class="arrow">→</span></a>
+          <a class="btn icon" href="https://www.linkedin.com/in/jaime-cerejeira/" target="_blank" rel="noopener" aria-label="Jaime Cerejeira on LinkedIn" title="Jaime Cerejeira on LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3v-11zm6.5 0h3.8v1.5h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v5.45h-4v-4.83c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.91h-4v-11z"/></svg>
+          </a>
+        </div>
+        <div class="pair">
+          <a class="btn" href="mailto:madalena.albuquerque@trilince.com">madalena.albuquerque@trilince.com <span class="arrow">→</span></a>
+          <a class="btn icon" href="https://www.linkedin.com/in/madalenamuller/" target="_blank" rel="noopener" aria-label="Madalena Albuquerque on LinkedIn" title="Madalena Albuquerque on LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3v-11zm6.5 0h3.8v1.5h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v5.45h-4v-4.83c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.91h-4v-11z"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
